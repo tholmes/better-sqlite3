@@ -2,7 +2,7 @@
   'includes': [ 'deps/common.gypi' ],
   'targets': [
     {
-      'target_name': 'better_sqlite3',
+      'target_name': '<(module_name)',
       'dependencies': [
         'deps/sqlite3.gyp:sqlite3'
       ],
@@ -17,6 +17,17 @@
       },
       'sources': [
         'src/better_sqlite3.cpp'
+      ]
+    },
+    {
+      "target_name": "action_after_build",
+      "type": "none",
+      "dependencies": [ "<(module_name)" ],
+      "copies": [
+        {
+          "files": [ "<(PRODUCT_DIR)/<(module_name).node" ],
+          "destination": "<(module_path)"
+        }
       ]
     },
     {
