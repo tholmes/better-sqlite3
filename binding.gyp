@@ -20,17 +20,6 @@
       ]
     },
     {
-      "target_name": "action_after_build",
-      "type": "none",
-      "dependencies": [ "better_sqlite3" ],
-      "copies": [
-        {
-          "files": [ "<(PRODUCT_DIR)/better_sqlite3.node" ],
-          "destination": "./lib/{node_abi}-{platform}-{arch}"
-        }
-      ]
-    },
-    {
       'target_name': 'test_extension',
       'dependencies': [
         'deps/sqlite3.gyp:action_before_build'
@@ -41,6 +30,6 @@
       'sources': [
         'deps/test_extension.c'
       ]
-    }
+    },
   ]
 }
