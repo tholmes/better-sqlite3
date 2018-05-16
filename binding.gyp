@@ -22,10 +22,10 @@
     {
       "target_name": "action_after_build",
       "type": "none",
-      "dependencies": [ "<(module_name)" ],
+      "dependencies": [ "better_sqlite3" ],
       "copies": [
         {
-          "files": [ "<(PRODUCT_DIR)/<(module_name).node" ],
+          "files": [ "<(PRODUCT_DIR)/better_sqlite3.node" ],
           "destination": "<(module_path)"
         }
       ]
