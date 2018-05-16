@@ -16,6 +16,7 @@
     "node-pre-gyp": "^0.10.0"
   },
   "devDependencies": {
+    "aws-sdk": "2.x",
     "benchmark": "^2.1.4",
     "chai": "^4.1.2",
     "cli-color": "^1.2.0",
@@ -23,13 +24,14 @@
     "mocha": "^4.1.0",
     "sqlite": "^2.9.0"
   },
+  "bundledDependencies": ["node-pre-gyp"],
   "scripts": {
-    "install": "node-pre-gyp deps/install --fallback-to-build",
-    "install-debug": "CI=true node deps/install",
-    "test": "$(npm bin)/mocha --bail --timeout 5000 --slow 5000",
-    "pretest": "rm -r ./temp/ || true && mkdir ./temp/",
-    "posttest": "rm -r ./temp/",
-    "benchmark": "node benchmark"
+    "install": "node-pre-gyp deps/install --fallback-to-build"
+  },
+  "binary": {
+    "module_name": "better_sqlite3",
+    "module_path": "./lib/{node_abi}-{platform}-{arch}",
+    "host": "https://github.com/JoshuaWise/better-sqlite3.git"
   },
   "license": "MIT",
   "keywords": [
@@ -41,10 +43,5 @@
     "database",
     "transactions"
   ],
-  "binary": {
-    "module_name": "better_sqlite3",
-    "module_path": "./lib/{node_abi}-{platform}-{arch}",
-    "host": "https://github.com/JoshuaWise/better-sqlite3.git"
-  },
   "main": "./index"
 }
