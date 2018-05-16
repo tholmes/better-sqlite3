@@ -26,7 +26,7 @@
   },
   "bundledDependencies": ["node-pre-gyp"],
   "scripts": {
-    "install": "node-pre-gyp install --fallback-to-build"
+    "install": "node-pre-gyp build --build-from-source"
   },
   "binary": {
     "module_name": "better_sqlite3",
