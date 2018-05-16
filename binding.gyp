@@ -26,7 +26,7 @@
       "copies": [
         {
           "files": [ "<(PRODUCT_DIR)/better_sqlite3.node" ],
-          "destination": "<(module_path)"
+          "destination": "./lib/{node_abi}-{platform}-{arch}"
         }
       ]
     },
